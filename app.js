@@ -27,7 +27,7 @@ app.use('/pokemon', pokemonRouter);
 app.use('/info', userRouter);
 
 // middleware errorHandler
-app.use(errorHandler);
+// app.use(errorHandler);
 
 app.use('/', express.static(path.resolve('/dist'))); // serve main path as static dir
 app.get('/', function(req, res) { // serve main path as static file
