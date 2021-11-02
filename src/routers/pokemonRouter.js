@@ -39,7 +39,9 @@ router.put("/catch/:id", (req, res)=> {
     const userName = req.headers.username;
     const pokemon = JSON.stringify(req.body.pokemon);
     const userFolderPath = path.resolve(`.\\users`, userName);
-
+    if (!fs.existsSync(userFolderPath) ){                     // if miss folder to username
+        fs.mkdirSync(userFolderPath)                          // create a folder to username 
+    }
     if (fs.existsSync(userFolderPath)){                             // if uesr name exists uesrs
         const collection = fs.readdirSync(userFolderPath)
         if (collection.includes(`${id}.json`)){                     // if in user name exists the pokemon
@@ -57,7 +59,9 @@ router.delete('/release/:id',(req, res) => {
     const id = req.params.id;
     const userName = req.headers.username;
     const userFolderPath = path.resolve(`.\\users`, userName);
-
+    if (!fs.existsSync(userFolderPath) ){                     // if miss folder to username
+        fs.mkdirSync(userFolderPath)                          // create a folder to username 
+    }
     const collection = fs.readdirSync(userFolderPath);              // array with files pokemon
     if (!collection.includes(`${id}.json`)){                        // if not in collection
         throw { "status": 403,                                      // change status to 403
@@ -74,7 +78,9 @@ router.get('/',(req, res) => {
     const userFolderPath = path.resolve(`.\\users`, userName);
     const pokemonCollection = [];
     const collection = fs.readdirSync(userFolderPath);                   // array with files pokemon
-
+    if (!fs.existsSync(userFolderPath) ){                     // if miss folder to username
+        fs.mkdirSync(userFolderPath)                          // create a folder to username 
+    }
     collection.forEach(pokemonFile => {
         const filePath = path.resolve(userFolderPath, pokemonFile);      // path of file 
         const pokemonObj = fs.readFileSync(filePath);                    // pokemon file object
