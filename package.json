@@ -1,0 +1,19 @@
+{
+  "name": "pokemon-heroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yakovcohen4/pokemon-heroku.git"
+  },
+  "author": "yakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yakovcohen4/pokemon-heroku/issues"
+  },
+  "homepage": "https://github.com/yakovcohen4/pokemon-heroku#readme"
+}
