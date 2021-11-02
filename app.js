@@ -18,7 +18,7 @@ const {errorHandler} = require('./src/middleware/errorHandler')
 const {userHandler} = require('./src/middleware/userHandler')
 
 // middleware userHandler
-app.use(userHandler)
+// app.use(userHandler)
 
 // http//localhost:8080/pokemon
 app.use('/pokemon', pokemonRouter);
