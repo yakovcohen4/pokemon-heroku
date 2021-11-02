@@ -10,10 +10,10 @@ const path = require('path')
 function userHandler (req, res, next) {
 
     const userName = req.headers.username;
-    if (!userName){                                           // if miss user name header
-        throw { "status": 401,                                // throw error 401
-                "messege": "miss user name header"};                         
-    }
+    // if (!userName){                                           // if miss user name header
+    //     throw { "status": 401,                                // throw error 401
+    //             "messege": "miss user name header"};                         
+    // }
 
     const userFolderPath = path.resolve(`.\\users`, userName);
     if (!fs.existsSync(userFolderPath) ){                     // if miss folder to username
